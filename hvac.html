@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0;
+        margin: 0;
+    }
+    header{
+        background-position: center;
+        background-size: 100% 100%;
+        height: 465px;
+        position: relative;
+    }
+    .capitalized{
+        text-transform: capitalize;
+    }
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 465px;
+    }
+    .topBox{
+        padding: 10px 50px 0;
+    }
+    .topBox p{
+        font-size: 3.25em;
+        color:white;
+        margin-bottom:0;
+        font-weight: 600;
+        line-height: 1;
+    }    
+    .topBox p.subtxt{
+        font-size: 35px;
+        text-transform: capitalize;
+    }
+    .topBox p br{
+        display: none;
+    }
+    .topBox p a{
+        color: white;
+        font-weight: 800;
+        position: relative;
+        text-decoration: none;
+        border-bottom: 5px solid #fa941c;
+    }
+    .orange{
+        display: inline-block;
+        padding:10px 20px;
+        background: #fa941c;
+        border-radius: 10px;
+        margin-left: 15px;
+    }
+    .steps_box{
+        max-width: 50%;
+    }
+    .steps_box{
+        margin-top: 53px;
+        display: flex;
+        flex-direction: row;
+        background: white;
+        padding: 30px 65px;
+        position: relative;
+        margin-left: 50px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+    .steps_box .step{
+        position: relative;
+    }
+    .steps_box span{
+        display: block;
+        font-size: 15px;
+        font-weight: 14px;
+        margin-bottom: px;
+        color: #337ab1;
+    }
+    .steps_box h4{
+        margin: 5px 0;
+        position: relative;
+        display: inline-block;
+        color: #2f78b0;
+        font-weight: 700;
+        font-size: 22px;
+    }
+    .steps_box h4:before{
+        position: absolute;
+        content: '';
+        bottom: -5px;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        background:#fa941c;
+    }
+    .steps_box h4:first-of-type:before{
+      width: 115%;
+    }
+    .steps_box .step:not(:last-of-type):before{
+        width: 1px;
+        content:'';
+        position: absolute;
+        right:15%;
+        background: #235a87;
+        height: 100%;
+    }
+    .steps_box p{
+        width: 70%;
+        color: #377db3;
+        line-height: 1.25;
+    }
+    .ratingBox{
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+        display: flex;
+        background:white;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .ratingBox > div{
+        flex: 1;
+        display: flex;
+
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .ratingBox > div span{
+        display: block;
+        word-break: keep-all;
+        white-space: nowrap;
+        
+    }
+    .ratingBox .score_box{
+        padding:10px;
+        align-items: center;
+        font-size: 40px;
+        font-weight: 800;
+        color: white;
+        background-color: #fa941c;
+    }
+    .ratingBox .txt_box{
+        padding: 10px;
+        width: fit-content;
+        padding: 0 30px;
+        color: #4989ba;
+        font-weight: 600;
+    }
+    .ratingBox .txt_box .stars{
+        margin: 5px 0;
+        color: #fa941b;
+    }
+    @media only screen and (max-width:1875px){
+        .topBox p{
+            font-size: 2.75em;
+        }
+    }
+    @media only screen and (max-width:1565px){
+        .topBox p{
+            font-size: 2.50em;
+        }
+    }
+    @media only screen and (max-width:1450px){
+        .topBox p{
+            font-size: 2.25em;
+        }
+        .steps_box h4{
+            font-size: 18px;
+        }
+        .steps_box p{
+            width: 75%;
+        }
+        .steps_box{
+            margin-top: 50px;
+        }
+    }
+    @media only screen and (max-width:1300px){
+        .topBox p{
+            font-size: 2em;
+        }
+        .steps_box h4{
+            font-size: 18px;
+        }
+        .steps_box p{
+            width: 75%;
+        }
+        .steps_box{
+            margin-top: 75px;
+        }
+        .topBox p.subtxt{
+            font-size: 1.75em;
+        }
+    }
+    @media only screen and (max-width:1200px){
+        .topBox p{
+            font-size: 1.85em;
+        }
+        .topBox p.subtxt {
+            font-size: 1.5em;
+        }
+        /* .topBox p a{
+            display: block;
+            margin: 10px 0;
+            width:max-content;
+        } */
+        /* .steps_box{
+            width: 90%;
+            max-width: 60%;
+            margin: 50px auto;
+        } */
+        .steps_box{
+            margin-top: 90px;
+            margin-left: 35px;
+        }
+    }
+    @media only screen and (max-width:1170px){
+        header  img{
+            height: 400px;
+        }
+        .topBox{
+            padding: 10px 30px 0;
+        }
+        .topBox p{
+            font-size: 1.75em;
+        }
+        .topBox p.subtxt {
+            font-size: 1.35em;
+        }
+        .steps_box{
+            margin-top: 75px;
+            margin-left: 30px;
+        }
+        .steps_box h4{
+            font-size: 16px;
+        }
+        .steps_box p{
+            font-size: 14px;
+        }
+        .ratingBox{
+            top: 10px;
+            bottom: unset;
+        }
+        .ratingBox .score_box{
+            font-size: 20px;
+        }
+        .ratingBox .txt_box{
+            padding: 0  15px;
+            font-size: 12px;
+        }
+    }
+    @media only screen and (max-width:1050px){
+        .steps_box{
+            padding: 30px 45px;
+            max-width: 55%;
+        }
+        .topBox p {
+            font-size: 1.65em;
+        }
+    }
+    @media only screen and (max-width:950px){
+        header  img{
+            height: 350px;
+        }
+        .steps{
+            width: max-content;
+        }
+        .steps_box h4{
+            font-size: .85em;
+        }
+        .steps_box{
+            padding: 30px 45px;
+            max-width: 70%;
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+        .step p{
+            font-size: .8em;
+        }
+        .topBox p {
+            font-size: 1.45em;
+        }
+
+        .topBox .orange{
+            margin-left: 0;
+            margin-top: 15px;
+        }
+    }
+    @media only screen and (max-width:850px){
+        .topBox p {
+            font-size: 1.30em;
+        }
+    }
+    @media only screen and (max-width:767px){
+        .topBox p {
+            font-size: 1.15em;
+        }
+        .topBox p.subtxt{
+            font-size: 1.15em;
+        }
+        .steps_box .step:not(:last-of-type):before{
+            right: 25px;
+        }
+    }
+    @media only screen and (max-width:700px){
+        .steps_box .step:not(:last-of-type):before{
+            right: 15px;
+        }
+        .topBox p a{
+            display: block;
+            width: max-content;
+            margin-top: 15px;
+        }
+        .topBox p br{
+            display: block;
+        }
+        .steps_box{
+            padding: 30px 45px;
+            max-width: 75%;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+    }
+    @media only screen and (max-width:630px){
+        .steps_box .step:first-of-type:before{
+            right: 15px;
+        }
+        .topBox p{
+            margin-top:15px;
+            font-size:2em;
+        }
+        .topBox p.subtxt{
+            font-size:1.35em;
+        }
+        .topBox p br{
+            display:none;
+        }
+        .topBox p a{
+            margin-bottom:15px;
+        }
+        .topBox p.subtxt span{
+            display:block;
+            width:max-content;
+        }
+        .steps_box{
+            margin-top:35px;
+        }
+        .steps_box span{
+            font-size:11px;
+        }
+        .steps_box h4{
+            font-size:.75em;
+        }
+        .step p{
+            font-size: .65em;;
+        }
+        .ratingBox{
+            right:10px;
+        }
+    }
+
+</style>
+<body>
+    <header>
+        <div class="ratingBox">
+            <div class="score_box">
+                5.0
+            </div>
+            <div class="txt_box">
+                <span class="count">Over <strong>8000</strong></span>
+                <span class="stars">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </span>
+                <span class="txt">Reviews</span>
+            </div>
+        </div>
+        <img src="./banner.png" alt="" style="width:100%;">
+        <div class="topBox">
+            <p>Buying Direct With <br> <a href="https://hvacdirect.com/">HVACDirect.com</a> <br> is Better!</p>
+            <p class="subtxt">save even more with code: <br> <span class="orange">HURRY</span></p>
+        </div>
+        <div class="steps_box">
+            <div class="step">
+                <span class="txt">Step 1:</span>
+                <h4>Discover</h4>
+                <p>HVAC Direct makes it easy to find exactly what you need to ffit your home at the best prices.</p>
+            </div>
+            <div class="step">
+                <span class="txt">Step 2:</span>
+                <h4>Compare Price & Save</h4>
+                <p>Have a qoute or want to rreplace an existing unit? HVAC Direct customers save an average of $3,000-$4,000!</p>
+            </div>
+            <div class="step">
+                <span class="txt">Step 3:</span>
+                <h4>No Fuss Delivery</h4>
+                <p>Free shipping on most items and a hassle free delivery experience!</p>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
